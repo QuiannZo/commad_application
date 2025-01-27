@@ -1,0 +1,9 @@
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/command_menu.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/edit_cache.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/rebuild_cache.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/list_install_components.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/install.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/install/local.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/install/strip.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/command_menu_autogen_timestamp_deps.dir
+/home/quiann/Desktop/local_projects/command_menu/build/c-Debug/CMakeFiles/command_menu_autogen.dir
