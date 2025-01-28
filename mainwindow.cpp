@@ -17,6 +17,17 @@ MainWindow::MainWindow(QWidget *parent, Logic& logic)
 
     // Inicializar la UI
     ui->setupUi(this);
+
+    // Btns icons.
+    // Set git icon
+    QIcon icon1("../../../commad_application/img/git.png"); // Usa un recurso de Qt o una ruta absoluta/relativa
+    ui->gitBtn->setIcon(icon1);
+    ui->gitBtn->setIconSize(QSize(40, 40));
+
+    // Set arch icon
+    QIcon icon2("../../../commad_application/img/arch.png"); // Usa un recurso de Qt o una ruta absoluta/relativa
+    ui->systemBtn->setIcon(icon2);
+    ui->systemBtn->setIconSize(QSize(40, 40));
 }
 
 MainWindow::~MainWindow()
@@ -26,6 +37,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_systemBtn_clicked()
 {
+    // Func
     qDebug() << "Directorio actual:" << QDir::currentPath();
     std::string response;
     std::string src = "../../../commad_application/src/data/arch.csv"; // Relative to the executable on build/
@@ -70,3 +82,10 @@ void MainWindow::on_systemBtn_clicked()
     // Estira la última columna para que ocupe el espacio sobrante
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
 }
+
+// Git btn.
+void MainWindow::on_gitBtn_clicked()
+{
+
+}
+

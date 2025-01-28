@@ -27,6 +27,8 @@ public:
 private slots:
     void on_systemBtn_clicked();
 
+    void on_gitBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     Logic& logic;
