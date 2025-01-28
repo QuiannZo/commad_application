@@ -5,7 +5,15 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+
+    //
+    Logic* logic = new Logic();
+
+    MainWindow w(nullptr, *logic);
     w.show();
-    return a.exec();
+
+    int result = a.exec();
+    delete logic;
+    std::cout << "Application closed." << std::endl;
+    return result;
 }

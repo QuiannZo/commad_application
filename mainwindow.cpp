@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent, Logic& logic)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , logic(logic)
 {
     // Establecer las propiedades de la ventana
     setWindowFlag(Qt::FramelessWindowHint); // Sin bordes
@@ -25,26 +26,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_systemBtn_clicked()
 {
-    // Test a random csv.
+    qDebug() << "Directorio actual:" << QDir::currentPath();
     std::string response;
-    ////clientNode.getSensorData(this->clientNode.username, response);  The file is gotten here.
-    std::string filePath = "src/data/arch.csv";
-    QFile file(filePath);
-
-    // Intentar abrir el archivo en modo lectura
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(nullptr, "Error", "No se pudo abrir el archivo: " + filePath);
-        return;
-    }
-
-    // Crear un QTextStream para leer el archivo
-    QTextStream in(&file);
-    QString fileContent = in.readAll(); // Leer todo el contenido como QString
-
-    // Convertir QString a std::string
-    response = fileContent.toStdString();
-
-    file.close(); // Cerrar el archivo
+    std::string src = "../../../commad_application/src/data/arch.csv"; // Relative to the executable on build/
+    //// get data here.
+    response = logic.getData(src);
 
     // Convertimos la respuesta de std::string a QString
     QString responseStr = QString::fromStdString(response);
@@ -61,7 +47,7 @@ void MainWindow::on_systemBtn_clicked()
     ui->tableWidget->setColumnCount(colCount);
 
     // Establecemos los encabezados de las columnas
-    QStringList headers = {"idSensor", "Date", "Time", "Value"};
+    QStringList headers = {"Name", "Command"};
     ui->tableWidget->setHorizontalHeaderLabels(headers);
 
     // Rellenamos la tabla con los datos de cada fila

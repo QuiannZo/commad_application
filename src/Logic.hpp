@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 #ifndef USUARIO_HPP
 #define USUARIO_HPP
@@ -11,6 +12,6 @@ public:
     Logic();
     ~Logic();
     std::string getData(std::string dataPath);
-}
+};
 
 #endif
